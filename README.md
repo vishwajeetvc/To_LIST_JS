@@ -1,7 +1,3 @@
-That's awesome that you taught your friends how to build this Todo app in just 2 days without using Google! Here's a **README.md** file you can use for your project. It highlights your learning, teaching, and what the app does:
-
----
-
 # 📝 Vanilla JS Todo List
 
 This is a simple and clean **Todo List** web application built using only **HTML**, **CSS**, and **JavaScript (no frameworks)**.
@@ -51,8 +47,4 @@ I created this project as a personal challenge and also to **teach my friends ev
 **Vishwajeet Kumar**
 
 I built this to challenge myself and help others learn the core building blocks of web development.
-
----
-
-Let me know if you'd like to turn this into a GitHub repository with commit history or Git commands explanation too!
 
