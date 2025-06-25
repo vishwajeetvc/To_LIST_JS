@@ -2,17 +2,21 @@ import {createTodo} from './controller.js'
 
 let store = [];
 
-
 //const cont = document.querySelector('.cont');
 const list = document.querySelector('.list');
 const input = document.querySelector('.mainInput');
 const button = document.querySelector('.addBtn');
+const deletAllBtn = document.querySelector('.deletAll')
+const extBtnBox = document.querySelector('.extbtnbox')
+const select = document.querySelector('select')
+
 
 if(localStorage.getItem('todo')){
   store = JSON.parse(localStorage.getItem('todo'));
   store.forEach(todoData => {
     const todo = createTodo(todoData);
     list.append(todo)
+    extBtnBox.style.display='flex'
   });
 }
 
@@ -30,8 +34,7 @@ button.addEventListener('click', ()=>{
   store.push(todoData);
 
   localStorage.setItem('todo', JSON.stringify(store))
-
-
+  extBtnBox.style.display='flex'
 })
 
 list.addEventListener('click', (event)=>{
@@ -84,14 +87,35 @@ list.addEventListener('click', (event)=>{
     }
 
   }
+})
 
-
-
+deletAllBtn.addEventListener('click', ()=>{
+  console.log("deleted")
+  list.innerHTML=""
+  store.length = 0;
+  localStorage.removeItem('todo');
+  extBtnBox.style.display='none'
 })
 
 
+select.addEventListener('change', (event)=>{
+  const filterBy = event.target.value
+  store = JSON.parse(localStorage.getItem('todo'))
+  if(filterBy == 'completed'){
+    store = store.filter(item => item.completed)
+  } else if(filterBy == 'pending') {
+    store = store.filter(item => !item.completed)
+  }
 
+  list.innerHTML=""
 
+  store.forEach(todoData => {
+    const todo = createTodo(todoData);
+    list.append(todo)
+    extBtnBox.style.display='flex'
+  });
+
+})
 
 
 

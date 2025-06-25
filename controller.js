@@ -11,7 +11,9 @@ export function createTodo(todoData){
 
   const deleteBtn = document.createElement('button');
   deleteBtn.className="delete"
-  deleteBtn.innerText="✖"
+  deleteBtn.style.color = 'red'
+  deleteBtn.style.fontSize = '29px'
+  deleteBtn.innerText="✘"
 
   const checkBox = document.createElement('input')
   checkBox.className="check"

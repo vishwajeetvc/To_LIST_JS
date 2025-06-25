@@ -76,7 +76,7 @@ body {
   align-items: center;
   gap: 10px;
   background-color: #f1f1f1;
-  padding: 10px 12px;
+  padding: 0px 18px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
@@ -117,4 +117,25 @@ button.delete:hover {
 h1{
   margin: 10px 0px;
   text-align: center;
+}
+
+
+.extbtnbox {
+  padding: 20px 0px 0px;
+  display: none;
+  justify-content:space-between;
+}
+
+.extbtnbox > button{
+  background:red;
+  color:white;
+  border-radius: 4px;
+  outline:none;
+  border: none;
+}
+
+.extbtnbox > button,
+.extbtnbox > select
+{
+  padding: 8px 20px;
 }
